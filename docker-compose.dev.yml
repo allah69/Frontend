@@ -3,8 +3,7 @@ version: '3.7'
 services:
   frontend:
     container_name: frontend-dev
-    build:
-      image: ghcr.io/dormlife-softeng/frontend-baseimage:0.2-dev
+    image: ghcr.io/dormlife-softeng/frontend-baseimage:0.2-dev
     volumes:
       - '.:usr/src/app'
       - '/usr/src/app/node_modules'
