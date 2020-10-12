@@ -273,35 +273,19 @@ function DormOwner(props: any) {
             </FormControl>
           </Col>
         </Row>
-        <Row  noGutters={true}>
+        <Row  noGutters={true} className={classes.row}>
           <Col>
-            <div
+          <div
               style={{
                 textAlign: "left",
                 display: "inline-block",
                 width: "350px",
               }}
             >
-              <FormControl component="fieldset">
-                <FormLabel className={classes.formLabel}>Gender</FormLabel>
-                <RadioGroup
-                  aria-label="gender"
-                  name="gender"
-                  value={values.gender}
-                  onChange={handleChange}
-                >
-                  <FormControlLabel
-                    value="female"
-                    control={<Radio color="secondary" />}
-                    label="Female"
-                  />{" "}
-                  <FormControlLabel
-                    value="male"
-                    control={<Radio color="secondary" />}
-                    label="Male"
-                  />
-                </RadioGroup>
-              </FormControl>
+            <TextField
+              name="upload-photo"
+              type="file"
+            />
             </div>
           </Col>
           <Col></Col>
