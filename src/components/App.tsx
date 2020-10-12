@@ -7,6 +7,7 @@ import Home from "./home/Home";
 import DormOwner from "./signup/DormOwner";
 import Signin from "./signin/Signin";
 import Dorm from "./dorm/Dorm"
+import DormHome from "./dormown/dormhome";
 function App() {
     
     return (
@@ -17,6 +18,8 @@ function App() {
             <Route  exact path="/signup/dormfinder" component={DormFinder} />
             <Route  exact path="/signup/dormowner" component={DormOwner} />
             <Route exact path="/dorm/:id" component={Dorm} />
+            <Route exact path="/dormowner/:id" component={DormHome} />
+
         </div>
     )
 }
