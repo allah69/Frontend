@@ -14,30 +14,34 @@ function Signup() {
         <div style={{padding:"2% 4%"}}>
             <Row style={{textAlign:"left"}}>
                 <Col>
-                    <Button onClick={()=> history.goBack()} variant="" ><ArrowBackIosIcon htmlColor="white" fontSize="large" /></Button>
+                    <Button onClick={()=> history.push("/")} variant="" ><ArrowBackIosIcon htmlColor="white" fontSize="large" /></Button>
                 </Col>
             </Row>
-            <Row style={{color:"white",margin:"15% 0"}} noGutters={true}>
-                <Col>
+            <Row style={{color:"white",margin:"1.5% 0"}} noGutters={true}>
+                <Col lg={5} style={{padding:"5% 0"}}>
                 <h1 style={{fontSize:"4rem",fontWeight:"bold"}}>Dorm Finder</h1>
                 <Button className="mt-5 btn-lg" onClick={()=> {
                     console.log(history)
                     history.push("/signup/dormfinder")
                 }} variant="outline-light">Signup</Button>
                 </Col>
-                <Col>
+                <Col lg={2}>
+                <div style={{display:"inline-block",backgroundColor:"white",width:"4px",height:"400px"}}>
+                </div>
+                </Col>
+                <Col lg={5} style={{padding:"5% 0"}}>
                 <h1 style={{fontSize:"4rem",fontWeight:"bold"}}>Dorm Owner</h1>
                 <Button className="mt-5 btn-lg" onClick={()=> {
                     history.push("/signup/dormowner")
                 }} variant="outline-light">Signup</Button>
                 </Col>
             </Row>
-            <Row style={{color:"white"}}>
+            <Row style={{color:"white",margin:"4% 0"}}>
                 <Col>
-                    <h1 style={{fontSize:"2.5rem",fontWeight:"bold"}}>Already have an account?</h1>
+                    <h1 style={{fontSize:"2.5rem"}}>Already have an account?</h1>
                     <a onClick={()=> {
                         history.push("/signin")
-                    }} style={{fontSize:"1.5rem",textDecoration:"underline"}}  role="button">Sign in</a>
+                    }} style={{fontSize:"2rem",textDecoration:"underline"}}  role="button">Sign in</a>
                 </Col>
             </Row>
             
