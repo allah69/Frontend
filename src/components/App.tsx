@@ -8,11 +8,8 @@ import DormOwner from "./signup/DormOwner";
 import Signin from "./signin/Signin";
 import Dorm from "./dorm/Dorm"
 import DormHome from "./dormown/dormhome";
-<<<<<<< HEAD
-
-=======
 import AddDromFrom from "./dormown/adddormform";
->>>>>>> 87a1af60dbdddb337f01be6864fb944ce24317a2
+
 function App() {
     
     return (
