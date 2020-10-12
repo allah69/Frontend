@@ -7,6 +7,8 @@ import Home from "./home/Home";
 import DormOwner from "./signup/DormOwner";
 import Signin from "./signin/Signin";
 import Dorm from "./dorm/Dorm"
+import Forgetpassword from "./signin/Forgetpassword";
+import Repassword from "./signin/Repassword";
 function App() {
     
     return (
@@ -17,6 +19,8 @@ function App() {
             <Route  exact path="/signup/dormfinder" component={DormFinder} />
             <Route  exact path="/signup/dormowner" component={DormOwner} />
             <Route exact path="/dorm/:id" component={Dorm} />
+            <Route exact path="/signin/forgetpassword" component={Forgetpassword} />
+            <Route exact path="/signin/repassword/:id" component={Repassword} />
         </div>
     )
 }

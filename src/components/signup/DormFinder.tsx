@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
-import { withFormik } from "formik";
+import { FormikProps, withFormik } from "formik";
 import * as Yup from "yup";
-import { withStyles, createStyles } from "@material-ui/core";
+import {withStyles, createStyles } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -13,10 +13,10 @@ import FormControl from "@material-ui/core/FormControl";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import Termservice from "./Termservice";
 import { phoneRegExp } from "./constant";
-import { propsNormalForm } from "./typeForm";
 import { useHistory } from "react-router-dom";
 import {Navbar,Nav,Row,Col,Button } from "react-bootstrap";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import authService from "../../services/auth.service"
 
 const styles = createStyles({
   black: {
@@ -47,7 +47,32 @@ const styles = createStyles({
   },
 });
 
-function DormFinder(props: any) {
+interface FormValue {
+  name : string,
+  lastName : string,
+  phone : string,
+  password : string,
+  confirmPassword : string,
+  gender : string,
+  acceptTerm : boolean,
+  email : string
+}
+interface MyFormProps {
+  name? : string,
+  lastName? : string,
+  phone? : string,
+  password? : string,
+  confirmPassword? : string,
+  gender? : string,
+  acceptTerm? : boolean,
+  email? : string  
+}
+interface Style {
+  classes? : any
+}
+
+
+function DormFinder(props: FormikProps<FormValue> & Style) {
   useEffect(() => {
     document.body.style.backgroundColor = "white";
   }, []);
@@ -325,26 +350,18 @@ function DormFinder(props: any) {
     </div>
   );
 }
-const DormFinderForm = withFormik({
-  mapPropsToValues: ({
-    name,
-    lastName,
-    email,
-    password,
-    confirmPassword,
-    phone,
-    gender,
-    acceptTerm,
-  }: propsNormalForm) => {
+ 
+const DormFinderForm = withFormik<MyFormProps,FormValue>({
+  mapPropsToValues: props => {
     return {
-      name: name || "",
-      lastName: lastName || "",
-      email: email || "",
-      password: password || "",
-      confirmPassword: confirmPassword || "",
-      gender: gender || "male",
-      acceptTerm: acceptTerm || false,
-      phone: phone || "",
+      name: props.name || "",
+      lastName: props.lastName || "",
+      email: props.email || "",
+      password: props.password || "",
+      confirmPassword: props.confirmPassword || "",
+      gender: props.gender || "male",
+      acceptTerm: props.acceptTerm || false,
+      phone: props.phone || "",
     };
   },
   validationSchema: Yup.object().shape({
@@ -376,9 +393,8 @@ const DormFinderForm = withFormik({
       phone,
       gender,
     };
-    setTimeout(() => {
-      alert(JSON.stringify(form));
-    }, 1000);
+    console.log(form)
+    console.log(authService.RegisterDormFinder(form))
     resetForm();
   },
 })(DormFinder);
