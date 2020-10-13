@@ -8,6 +8,8 @@ import DormOwner from "./signup/DormOwner";
 import Signin from "./signin/Signin";
 import Dorm from "./dorm/Dorm"
 import DormHome from "./dormown/dormhome";
+
+import ContactSupport from "./dormown/ContactSupport";
 import AddDromFrom from "./dormown/adddormform";
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
             <Route  exact path="/signup/dormowner" component={DormOwner} />
             <Route exact path="/dorm/:id" component={Dorm} />
             <Route exact path="/dormowner/:id" component={DormHome} />
+            <Route exact path="/dormown/ContactSupport" component={ContactSupport} />
             <Route exact path="/adddorm/:id" component={AddDromFrom} />
 
         </div>
