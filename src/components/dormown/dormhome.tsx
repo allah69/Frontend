@@ -7,7 +7,7 @@ function DormHome() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     return (
-        <div style={{textAlign:"center"}}>
+        <div style={{textAlign:"center"}} >
             
         </div>
     )
