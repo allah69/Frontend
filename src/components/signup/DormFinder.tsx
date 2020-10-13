@@ -93,6 +93,7 @@ function DormFinder(props: FormikProps<FormValue> & Style) {
 		handleSubmit,
 		handleReset,
 	} = props;
+	console.log(props);
 	return (
 		<div>
 			<Navbar style={{ padding: "1%" }} bg="danger">
@@ -106,8 +107,8 @@ function DormFinder(props: FormikProps<FormValue> & Style) {
 			<Form
 				style={{ margin: "5% 20%" }}
 				onSubmit={() => {
-					setShowPopup(true);
 					handleSubmit();
+					props.isValid && setShowPopup(true);
 				}}
 			>
 				<Row className={classes.row} noGutters={true}>
@@ -387,6 +388,7 @@ const DormFinderForm = withFormik<MyFormProps, FormValue>({
 		console.log(form);
 		console.log(authService.RegisterDormFinder(form));
 		resetForm();
+		return true;
 	},
 })(DormFinder);
 
