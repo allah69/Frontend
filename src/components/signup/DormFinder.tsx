@@ -93,7 +93,6 @@ function DormFinder(props: FormikProps<FormValue> & Style) {
 		handleSubmit,
 		handleReset,
 	} = props;
-	console.log(props);
 	return (
 		<div>
 			<Navbar style={{ padding: "1%" }} bg="danger">
@@ -388,7 +387,6 @@ const DormFinderForm = withFormik<MyFormProps, FormValue>({
 		console.log(form);
 		console.log(authService.RegisterDormFinder(form));
 		resetForm();
-		return true;
 	},
 })(DormFinder);
 
