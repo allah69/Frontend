@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import TextField from "@material-ui/core/TextField";
 import FormControl from "@material-ui/core/FormControl";
-import FormLabel from "@material-ui/core/FormLabel";
+import logowhite from "../Logo_White.png"
 
 function Signin() {
     const history = useHistory();
@@ -52,7 +52,7 @@ function Signin() {
                 }} variant="outline-light" >Sign in</Button>
                 <br /><br /><br />
                 <a onClick={()=> {
-                history.push("/signin/forgotpass")
+                history.push("/signin/forgetpassword")
                 }} style={{fontSize:"1rem",textDecoration:"underline"}}  role="button">forgot your password?</a>
                 </Col>
                 <Col lg={2} style={{padding:"5px"}}>
@@ -67,7 +67,7 @@ function Signin() {
                 history.push("/signup")
                 }} style={{fontSize:"3rem",textDecoration:"underline"}}  role="button">sign up</a>!</h1>
                 <br /><br /><br />
-                <img src="https://files.slack.com/files-pri/T01AGR0GJHK-F01CDFRHD8A/logo_white.png" style ={{width:"300px", height:"300px"}}/>
+                <img src={logowhite} style ={{width:"300px", height:"300px"}}/>
                 </Col>
             </Row>
             
