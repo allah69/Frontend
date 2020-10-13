@@ -5,6 +5,8 @@ import { useHistory } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import DormList from './DormList';
+import DormDetail from './DormDetail';
 
 function DormHome() {
     const history = useHistory();
@@ -26,10 +28,13 @@ function DormHome() {
                         height: "0",
                         left: "0%",
                         color: "white",
+                        fontStyle: "normal",
+                        fontWeight: 600,
+                        fontSize: "45px",
                     }}>My Dorm</h1>
                 </Nav>
             </Navbar>
-            <div style={{ padding: "0% 4%" }}>
+            <div style={{ padding: "1% 4%" }}>
                 <Row noGutters={true}>
                     <Col>
                         <Row noGutters={true}>
@@ -45,28 +50,47 @@ function DormHome() {
                             </InputGroup>
                         </Row>
                         <Row noGutters={true}>
-                            list
+                            <DormList />
                         </Row>
-                        <div
-                            style={{
-                                textAlign: "left",
-                                display: "inline-block",
-                                width: "750px",
-                                padding: "2% 0% "
-
-                            }}
-                        >
-                            <Button variant="light">
-                                Add Dorm
+                        <Row noGutters={true}>
+                            <div
+                                style={{
+                                    textAlign: "left",
+                                    display: "inline-block",
+                                    width: "100%",
+                                    padding: "2% 0% "
+                                }}
+                            >
+                                <Button variant="light" size="lg" block style={{ color: "red" ,width:"150px" }}>
+                                    Add Dorm
                         </Button>
-                        </div>
+                            </div>
+                        </Row>
                     </Col>
-                    <Col>
-                        inform
+                    <Col style={{ maxWidth: "20px" }}>
+                    </Col>
+                    <Col className="bg-white">
+                        <Row noGutters={true} style={{ height: "550px" }}>
+                            <DormDetail />
+                        </Row>
+                        <Row noGutters={true} style={{ padding: "1% 2%" }}>
+                            <Col>
+                                <Button variant="danger">
+                                    Generate Review Code
+                            </Button>
+                            </Col>
+                            <Col style={{ width: "100px" }}>
+                            </Col>
+                            <Col>
+                                <Button variant="warning" style={{ textAlign: "right", color: "white" }}>
+                                    Generate Review Code
+                            </Button>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </div>
-        </div>
+        </div >
     )
 }
 export default DormHome;
