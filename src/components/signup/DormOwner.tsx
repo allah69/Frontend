@@ -110,7 +110,17 @@ function DormOwner(props: FormikProps<FormValue> & Style) {
         style={{ margin: "3% 20%" }}
         onSubmit={() => {
           handleSubmit();
-          props.isValid && setShowEmailPopup(true);
+          console.log(props);
+          props.values.name &&
+            props.values.lastName &&
+            props.values.email &&
+            props.values.password &&
+            props.values.confirmPassword &&
+            props.values.gender &&
+            props.values.acceptTerm &&
+            phoneRegExp.test(props.values.phone) &&
+            idenRegExp.test(props.values.natID) &&
+            setShowEmailPopup(true);
         }}
       >
         <Row className={classes.row} noGutters={true}>
@@ -350,6 +360,7 @@ function DormOwner(props: FormikProps<FormValue> & Style) {
                 width: "350px",
               }}
             >
+              <EmailPopup open={showEmailPopup} setOpen={setShowEmailPopup} />
               <Button
                 className={classes.button}
                 variant="secondary"
@@ -366,9 +377,6 @@ function DormOwner(props: FormikProps<FormValue> & Style) {
           <Col></Col>
         </Row>
       </Form>
-
-      <EmailPopup open={showEmailPopup} setOpen={setShowEmailPopup} />
-      {/* <OTPPopup open={showOTPPopup} setOpen={setShowOTPPopup} /> */}
     </div>
   );
 }

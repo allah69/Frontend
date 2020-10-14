@@ -107,7 +107,16 @@ function DormFinder(props: FormikProps<FormValue> & Style) {
         style={{ margin: "5% 20%" }}
         onSubmit={() => {
           handleSubmit();
-          props.isValid && setShowPopup(true);
+          console.log(props);
+          props.values.name &&
+            props.values.lastName &&
+            props.values.email &&
+            props.values.password &&
+            props.values.confirmPassword &&
+            props.values.gender &&
+            props.values.acceptTerm &&
+            phoneRegExp.test(props.values.phone) &&
+            setShowPopup(true);
         }}
       >
         <Row className={classes.row} noGutters={true}>
