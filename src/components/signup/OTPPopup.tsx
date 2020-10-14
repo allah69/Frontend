@@ -83,7 +83,7 @@ export default function EmailPopup(props: OTPPopupProps) {
                     style={{ outline: "none" }}
                   >
                     <IconButton
-                      aria-label="show more"
+                      aria-label="close"
                       style={{ padding: 0, outline: "none", color: "#FFFFFF" }}
                       onClick={handleClose}
                     >
@@ -135,6 +135,7 @@ export default function EmailPopup(props: OTPPopupProps) {
                       color="secondary"
                       size="large"
                       style={{ outline: "none" }}
+                      onClick={() => {}}
                     >
                       <Typography
                         color="primary"
@@ -154,6 +155,7 @@ export default function EmailPopup(props: OTPPopupProps) {
                       color="secondary"
                       size="large"
                       style={{ outline: "none" }}
+                      onClick={() => {}}
                     >
                       <Typography
                         color="primary"

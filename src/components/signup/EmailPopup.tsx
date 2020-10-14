@@ -100,6 +100,7 @@ export default function EmailPopup(props: EmailPopupProps) {
                     color="secondary"
                     size="large"
                     style={{ outline: "none" }}
+                    onClick={() => {}}
                   >
                     <Typography
                       color="primary"
