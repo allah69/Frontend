@@ -35,7 +35,7 @@ function DormList() {
     <div >
       <div
         className="overflow-auto"
-        style={{ textAlign: "center", maxWidth: "705px", maxHeight: "480px" ,}}
+        style={{ textAlign: "center", maxHeight: "480px" ,}}
       >
         {suggestLists.map((item, index) => {
           return <SuggestItem {...item} key={index} />

@@ -36,7 +36,7 @@ function DormHome() {
             </Navbar>
             <div style={{ padding: "1% 4%" }}>
                 <Row noGutters={true}>
-                    <Col>
+                    <Col xs={5}>
                         <Row noGutters={true}>
                             <InputGroup className="mb-3">
                                 <FormControl
@@ -49,7 +49,7 @@ function DormHome() {
                                 </InputGroup.Append>
                             </InputGroup>
                         </Row>
-                        <Row noGutters={true}>
+                        <Row noGutters={true} >
                             <DormList />
                         </Row>
                         <Row noGutters={true}>
@@ -61,15 +61,15 @@ function DormHome() {
                                     padding: "2% 0% "
                                 }}
                             >
-                                <Button variant="light" size="lg" block style={{ color: "red" ,width:"150px" }}>
+                                <Button variant="light" size="lg" block style={{ color: "red" ,width:"150px" }} onClick={()=> history.push("/adddorm/example")}>
                                     Add Dorm
                         </Button>
                             </div>
                         </Row>
                     </Col>
-                    <Col style={{ maxWidth: "20px" }}>
+                    <Col xs={1} >
                     </Col>
-                    <Col className="bg-white">
+                    <Col className="bg-white" xs={6}>
                         <Row noGutters={true} style={{ height: "550px" }}>
                             <DormDetail />
                         </Row>
@@ -82,8 +82,8 @@ function DormHome() {
                             <Col style={{ width: "100px" }}>
                             </Col>
                             <Col>
-                                <Button variant="warning" style={{ textAlign: "right", color: "white" }}>
-                                    Generate Review Code
+                                <Button variant="warning" style={{ textAlign: "right", color: "white" }} onClick={()=> history.push("/dormown/ContactSupport")}>
+                                    Contact Support
                             </Button>
                             </Col>
                         </Row>
