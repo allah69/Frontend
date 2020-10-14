@@ -110,7 +110,6 @@ function DormOwner(props: FormikProps<FormValue> & Style) {
         style={{ margin: "3% 20%" }}
         onSubmit={() => {
           handleSubmit();
-          console.log(props);
           props.values.name &&
             props.values.lastName &&
             props.values.email &&
