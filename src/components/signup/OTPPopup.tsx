@@ -12,8 +12,9 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import IconButton from "@material-ui/core/IconButton";
+import InputBase from "@material-ui/core/InputBase";
 
-interface EmailPopupProps {
+interface OTPPopupProps {
   open: boolean;
   setOpen: any;
 }
@@ -31,6 +32,9 @@ const useStyles = makeStyles((theme: Theme) =>
     expandIcon: { padding: 0 },
     grid: { paddingBottom: 0 },
     textPopup: { color: "#FFFFFF" },
+    otpTextField: {
+      background: "#FFFFFF",
+    },
     buttonPopup: {
       margin: "1vh",
       outline: "none",
@@ -41,7 +45,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   })
 );
-export default function EmailPopup(props: EmailPopupProps) {
+export default function EmailPopup(props: OTPPopupProps) {
   const handleClickOpen = () => {
     props.setOpen(true);
   };
@@ -89,27 +93,78 @@ export default function EmailPopup(props: EmailPopupProps) {
                 </Grid>
                 <Grid item xs={12} style={{ justifyContent: "center" }}>
                   <Typography className={classes.textPopup} variant="h3" component="h2">
-                    Please check your e-mail
+                    Enter OTP Code
                   </Typography>
                 </Grid>
-                <Grid item xs={12} style={{ justifyContent: "center", outline: "none" }}>
-                  <Button
-                    disableElevation
-                    className={classes.buttonPopup}
-                    variant="contained"
-                    color="secondary"
-                    size="large"
-                    style={{ outline: "none" }}
-                  >
-                    <Typography
-                      color="primary"
-                      variant="h5"
-                      component="h3"
+                <Grid item xs={12} style={{ justifyContent: "center" }}>
+                  <Typography className={classes.textPopup} variant="h6" component="h2">
+                    A text message with your code
+                    <br />
+                    has been send to: {"userNumber"}
+                  </Typography>
+                </Grid>
+                <Grid container item xs={12} style={{ justifyContent: "center" }}>
+                  <InputBase
+                    className={classes.otpTextField}
+                    placeholder="Enter your OTP code"
+                    style={{ fontSize: 35, borderRadius: "10px" }}
+                    inputProps={{
+                      maxLength: 5,
+                      style: { textAlign: "center", marginLeft: "5%", marginRight: "5%" },
+                    }}
+                    onChange={(e) => {
+                      e.target.value = e.target.value.toUpperCase();
+                    }}
+                  />
+                </Grid>
+                <Grid
+                  container
+                  item
+                  direction="row"
+                  xs={12}
+                  spacing={1}
+                  alignItems="center"
+                  justify="center"
+                  style={{ justifyContent: "center", outline: "none" }}
+                >
+                  <Grid item>
+                    <Button
+                      disableElevation
+                      className={classes.buttonPopup}
+                      variant="contained"
+                      color="secondary"
+                      size="large"
                       style={{ outline: "none" }}
                     >
-                      Resend
-                    </Typography>
-                  </Button>
+                      <Typography
+                        color="primary"
+                        variant="h5"
+                        component="h3"
+                        style={{ outline: "none" }}
+                      >
+                        Comfirm
+                      </Typography>
+                    </Button>
+                  </Grid>
+                  <Grid item>
+                    <Button
+                      disableElevation
+                      className={classes.buttonPopup}
+                      variant="contained"
+                      color="secondary"
+                      size="large"
+                      style={{ outline: "none" }}
+                    >
+                      <Typography
+                        color="primary"
+                        variant="h5"
+                        component="h3"
+                        style={{ outline: "none" }}
+                      >
+                        Resend
+                      </Typography>
+                    </Button>
+                  </Grid>
                 </Grid>
               </Grid>
             </CardContent>
